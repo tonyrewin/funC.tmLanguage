@@ -1,0 +1,110 @@
+{
+	"$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+	"name": "funC",
+	"patterns": [
+		{
+			"include": "#keywords"
+		},
+		{
+			"include": "#strings"
+		},
+		{
+			"include": "#runes"
+		},
+		{
+			"include": "#varDeclarations"
+		},
+		{
+			"include": "#funcDeclarations"
+		},
+		{
+			"include": "#types"
+		},
+		{
+			"include": "#literals"
+		},
+		{
+			"include": "#operators"
+		},
+		{
+			"include": "#identifiers"
+		}
+	],
+	"repository": {
+		"keywords": {
+			"patterns": [
+				{
+					"name": "keyword.control.fc",
+					"match": "\\b(return|var|repeat|do|while|until|if|ifnot|then|else|elseif|elseifnot|throw_unless|throw_if|throw)\\b"
+				}
+			]
+		},
+		"literals": {
+			"patterns": [
+				{
+					"name": "constant.numeric.fc",
+					"match": "\\b[0-9xa-f]+"
+				}
+			]
+		},
+		"types": {
+			"patterns": [
+				{
+					"name": "support.type.fc",
+					"match": "\\b(int|cell|slice|builder|cont|tuple|\\->|method_id|_|extern|asm|impure|method_id|operator|ingix|infixl|infixr)\\b"
+				}
+			]
+		},
+		"strings": {
+			"name": "string.quoted.double.fc",
+			"begin": "\"",
+			"end": "\"",
+			"patterns": [
+				{
+					"name": "constant.character.escape.fc",
+					"match": "\\\\."
+				}
+			]
+		},
+		"operators": {
+			"patterns": [
+				{
+					"name": "comment.line.fc",
+					"match": ";;.*\\n"
+				},
+				{
+					"name": "keyword.operator.fc",
+					"match": "=|\\+|\\-|\\*|/|%|\\?|:|\\,|;|\\(|\\)|\\{|\\}|_|<|>|&|\\||~"
+				},
+				{
+					"name": "keyword.operator.fc",
+					"match": "==|!=|<=|>=|<=>|<<|>>|>>~|>>\\^|/~|/\\^|/%|\\+=|\\-=|\\*=|/=|%=|/~=|/\\^=|<<=|>>=|>>~=|>>\\^="
+				}
+			]
+		},
+		"identifiers": {
+			"patterns": [
+				{
+					"name": "variable.other.var.fc",
+					"match": "\\b[a-zA-Z0-9_]+"
+				}
+			]
+		},
+		"runes": {
+			"name": "string.quoted.single.fc",
+			"begin": "'",
+			"end": "'",
+			"patterns": []
+		},
+		"varDeclarations": {
+			"patterns": [
+				{
+					"name": "storage.type.fc",
+					"match": "\\b(var)\\b"
+				}
+			]
+		},
+		"funcDeclarations": {}
+	},
+	"scopeName": "source.fc"
+}

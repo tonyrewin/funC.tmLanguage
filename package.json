@@ -1,0 +1,26 @@
+{
+    "name": "funC",
+    "displayName": "funC Language",
+    "description": "Syntax highlight for funC",
+    "version": "0.0.1",
+    "license": "MIT",
+    "engines": {
+        "vscode": "*"
+    },
+    "categories": [
+        "Programming Languages"
+    ],
+    "contributes": {
+        "languages": [{
+            "id": "funC",
+            "aliases": ["funC", "fc"],
+            "extensions": [".fc"],
+            "configuration": "./language-configuration.json"
+        }],
+        "grammars": [{
+            "language": "funC",
+            "scopeName": "source.fc",
+            "path": "./syntaxes/funC.tmLanguage.json"
+        }]
+    }
+}
